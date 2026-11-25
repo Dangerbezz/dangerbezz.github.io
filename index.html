@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Сайт для автосервиса — три варианта</title>
+<meta name="description" content="Три готовых варианта сайта для автосервиса. Откройте каждый и выберите подходящий.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root { --brand: #1F3A4D; --deep: #152A38; --accent: #F2B705; --ink: #1B2730; --paper: #EEF2F4; --muted: #4F5E68; --line: #C9D3D9; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font: 18px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--paper); }
+h1, h2, h3 { font-family: Bahnschrift, "Roboto Condensed", "Arial Narrow", system-ui, sans-serif; line-height: 1.1; margin: 0 0 .5em; }
+a { color: var(--brand); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 16px; }
+.head { background: var(--brand); color: #fff; padding: 40px 0 48px; }
+.head h1 { font-size: clamp(2.1rem, 1.4rem + 3.4vw, 3.6rem); max-width: 18ch; }
+.head p { color: #C3D1DA; max-width: 40rem; margin: 0 0 .75rem; font-size: 1.1rem; }
+.how { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 1.25rem; padding: 0; list-style: none; color: #fff; font-weight: 600; }
+.how li::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-right: 8px; }
+.tiers { display: grid; gap: 16px; margin: -24px auto 0; padding-bottom: 48px; }
+@media (min-width: 900px) { .tiers { grid-template-columns: 1fr 1fr 1fr; align-items: stretch; } }
+.tier { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; }
+.tier--top { border: 3px solid var(--accent); }
+.tier h2 { font-size: 2.2rem; margin-bottom: .15em; }
+.tier .size { font-weight: 700; color: var(--muted); margin: 0 0 .75rem; }
+.tier .for { margin: 0 0 1rem; }
+.tier ul { margin: 0 0 1.5rem; padding: 0; list-style: none; flex: 1; }
+.tier li { padding: 8px 0 8px 28px; border-top: 1px solid var(--line); position: relative; }
+.tier li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 12px; height: 7px; border-left: 3px solid #1E7A46; border-bottom: 3px solid #1E7A46; transform: rotate(-45deg); }
+.tier li.plus { font-weight: 600; }
+.btn { display: flex; align-items: center; justify-content: center; min-height: 56px; padding: 12px 20px; border-radius: 6px; background: var(--accent); color: var(--ink); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+.btn:hover { background: #FFC81F; }
+.note { background: #fff; border-left: 6px solid var(--accent); border-radius: 0 8px 8px 0; padding: 20px; margin: 0 0 24px; }
+.note p { margin: 0 0 .6em; }
+.note p:last-child { margin: 0; }
+.foot { padding: 24px 0 40px; color: var(--muted); font-size: 1rem; }
+</style>
+</head>
+<body>
+<header class="head">
+  <div class="wrap">
+    <h1>Сайт для вашего автосервиса: три варианта</h1>
+    <p>Все три — готовые рабочие сайты. Откройте каждый, полистайте и попробуйте записаться. Потом напишите, какой вариант вам ближе.</p>
+    <ul class="how">
+      <li>Лучше смотреть с телефона — так зайдут ваши клиенты</li>
+      <li>Ничего не нужно скачивать</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tiers">
+    <section class="tier" aria-labelledby="t1">
+      <h2 id="t1">Старт</h2>
+      <p class="size">1 страница</p>
+      <p class="for">Чтобы по ссылке из Яндекс Карт открывался аккуратный сайт с ценами, адресом и кнопкой «Позвонить».</p>
+      <ul>
+        <li>Телефон, адрес и режим работы на первом экране</li>
+        <li>«Сейчас открыто / закрыто» и когда перезвоните</li>
+        <li>Услуги, цены «от», как проходит ремонт, гарантия</li>
+        <li>Запись: имя, телефон, услуга, фото поломки</li>
+        <li>WhatsApp и Telegram, если заявка не ушла</li>
+      </ul>
+      <a class="btn" href="start/">Открыть «Старт»</a>
+    </section>
+
+    <section class="tier" aria-labelledby="t2">
+      <h2 id="t2">Стандарт</h2>
+      <p class="size">5 разделов</p>
+      <p class="for">Чтобы записывать клиентов на время, принимать вызовы мастера и заявки от таксопарков.</p>
+      <ul>
+        <li>Всё из «Старта»</li>
+        <li class="plus">Запись на день и час по вашему графику</li>
+        <li class="plus">«Вызвать мастера» с определением местоположения</li>
+        <li class="plus">Галерея мастерской, частые вопросы</li>
+        <li class="plus">Блок и заявка для автопарков</li>
+        <li class="plus">Кнопки «Записаться / Позвонить» всегда внизу экрана</li>
+      </ul>
+      <a class="btn" href="standard/">Открыть «Стандарт»</a>
+    </section>
+
+    <section class="tier tier--top" aria-labelledby="t3">
+      <h2 id="t3">Премиум</h2>
+      <p class="size">17 страниц</p>
+      <p class="for">Чтобы клиенты находили вас в поиске по каждой услуге и сами прикидывали цену до звонка.</p>
+      <ul>
+        <li>Всё из «Стандарта»</li>
+        <li class="plus">Своя страница под каждую услугу — для Яндекса и Google</li>
+        <li class="plus">Калькулятор цены под класс машины</li>
+        <li class="plus">Запись по шагам, ничего не теряется</li>
+        <li class="plus">«До / после» для кузовных работ</li>
+        <li class="plus">Тёмная тема, анимация, схема зон выезда</li>
+      </ul>
+      <a class="btn" href="premium/">Открыть «Премиум»</a>
+    </section>
+  </div>
+
+  <div class="note">
+    <p><b>Это пример на вымышленном сервисе «Ключ».</b> На вашем сайте будут ваши название, адрес, телефон, цены, фото мастерской и настоящие отзывы клиентов.</p>
+    <p>Заявки с сайта приходят вам на почту и в Telegram. Сайт работает на любом недорогом хостинге, без ежемесячной платы за конструктор.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">Понравился вариант — ответьте на сообщение, в котором была эта ссылка, и напишите какой.</div>
+</footer>
+</body>
+</html>
