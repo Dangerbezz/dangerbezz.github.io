@@ -479,6 +479,8 @@ img { display: block; max-width: 100%; }
       s.setProperty('--accent-ink', lum(st.a) > .3 ? '#17130A' : '#FFFFFF');
       var strip = frame.contentDocument.body.firstElementChild;   // полоска «Демо» сверху в примерке не нужна
       if (strip && /Демо:/.test(strip.textContent)) strip.hidden = true;
+      var d = frame.contentDocument;   // полосу прокрутки внутри «устройства» прячем — как на настоящем телефоне
+      if (!d.getElementById('sc-hide')) { var st2 = d.createElement('style'); st2.id = 'sc-hide'; st2.textContent = 'html{scrollbar-width:none}::-webkit-scrollbar{display:none}'; d.head.appendChild(st2); }
     } catch (e) {}
   }
   function fit() {
