@@ -77,7 +77,8 @@
 <main id="main">
 
 <!-- 1. ПЕРВЫЙ ЭКРАН -->
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero hero--photo has-photo" aria-labelledby="hero-title">
+  <div class="bg-photo" aria-hidden="true"><img src="images/ph/hero-960.webp" srcset="images/ph/hero-500.webp 500w, images/ph/hero-960.webp 960w, images/ph/hero-1280.webp 1280w, images/ph/hero-1920.webp 1920w" sizes="100vw" width="1280" height="960" alt="" fetchpriority="high" decoding="async"></div>
   <div class="wrap hero__grid">
     <div class="hero__text">
       <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>Пн–Пт 9:00–20:00, Сб 10:00–18:00</span></p>
@@ -209,9 +210,9 @@
       </div>
     </div>
     <div class="about__photos">
-      <figure class="ph ph--tall"><div class="ph__box" role="img" aria-label="Место для фото мастерской снаружи"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14h8l4-6h12l4 6h8v26H6z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Фото: мастерская снаружи, вывеска и ворота</span><code>images/workshop.jpg</code></div></figure>
-      <figure class="ph"><div class="ph__box" role="img" aria-label="Место для фото мастеров"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14h8l4-6h12l4 6h8v26H6z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Фото: мастера за работой</span><code>images/team.jpg</code></div></figure>
-      <figure class="ph"><div class="ph__box" role="img" aria-label="Место для фото бокса внутри"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14h8l4-6h12l4 6h8v26H6z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Фото: бокс с подъёмниками</span><code>images/box.jpg</code></div></figure>
+      <figure class="ph ph--img ph--tall"><img src="images/ph/workshop-960.webp" srcset="images/ph/workshop-500.webp 500w, images/ph/workshop-960.webp 960w, images/ph/workshop-1280.webp 1280w, images/ph/workshop-1920.webp 1920w" sizes="(max-width: 899px) 100vw, 45vw" width="1280" height="854" alt="Цех вечером: машина с открытым капотом, свет ламп" loading="lazy" decoding="async"></figure>
+      <figure class="ph ph--img"><img src="images/ph/hands-960.webp" srcset="images/ph/hands-500.webp 500w, images/ph/hands-960.webp 960w, images/ph/hands-1280.webp 1280w" sizes="(max-width: 899px) 50vw, 22vw" width="1280" height="854" alt="Руки мастера с отвёрткой у замка двери" loading="lazy" decoding="async"></figure>
+      <figure class="ph ph--img"><img src="images/ph/box-960.webp" srcset="images/ph/box-500.webp 500w, images/ph/box-960.webp 960w, images/ph/box-1280.webp 1280w, images/ph/box-1920.webp 1920w" sizes="(max-width: 899px) 50vw, 22vw" width="1280" height="853" alt="Машины подняты на подъёмниках в боксе" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -222,7 +223,9 @@
     <h2 id="otzyvy-title">Что говорят клиенты</h2>
     <p class="demo-note">Пример отзывов. На вашем сайте будут настоящие отзывы ваших клиентов.</p>
     <div class="reviews">
-      <blockquote class="review"><p>Пришёл с горящим чеком, через 40 минут показали распечатку: датчик кислорода. Заменили в тот же день, старый датчик отдали.</p><footer>Андрей, Kia Rio</footer></blockquote>
+      <blockquote class="review"><p>Пришёл с горящим чеком, через 40 минут показали распечатку: датчик кислорода. Заменили в тот же день, старый датчик отдали.</p><footer>Андрей, Kia Rio
+  <div class="wrap"><p class="credits">Фото-примеры: <a href="https://commons.wikimedia.org/wiki/File:Chery_A1_-_service_shop_in_Ukraine_(7).jpg" rel="nofollow noopener" target="_blank">ANT Berezhnyi</a> (<a href="https://creativecommons.org/licenses/by/3.0" rel="license nofollow noopener" target="_blank">CC BY 3.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Car_repair_shop.jpg" rel="nofollow noopener" target="_blank">Martin Vorel</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Hands_repairing_a_car_door_latch_using_a_screwdriver_in_a_workshop_setting.jpg" rel="nofollow noopener" target="_blank">Shixart1985</a> (<a href="https://creativecommons.org/licenses/by/2.0" rel="license nofollow noopener" target="_blank">CC BY 2.0</a>), <a href="https://commons.wikimedia.org/wiki/File:USMC-100702-M-6457M-002.jpg" rel="nofollow noopener" target="_blank">Unknown author</a> (<a href="https://creativecommons.org/publicdomain/mark/1.0/" rel="license nofollow noopener" target="_blank">Public domain</a>) — Wikimedia Commons.</p></div>
+</footer></blockquote>
       <blockquote class="review"><p>Записалась на ТО через сайт вечером, утром перезвонили. Без навязывания лишнего, всё по смете.</p><footer>Ольга, Hyundai Creta</footer></blockquote>
       <blockquote class="review"><p>Встал на трассе под Медным. Мастер приехал через час, дотянули до сервиса своим ходом.</p><footer>Сергей, Газель Next</footer></blockquote>
     </div>
@@ -309,7 +312,7 @@
 <footer class="foot">
   <div class="wrap foot__row">
     <p><b>Автосервис «Ключ»</b>, Тверь, ул. Складская, 12<br><a href="tel:+79000000000">+7 (900) 000-00-00</a>, <a href="mailto:zayavki@example.ru">zayavki@example.ru</a></p>
-    <p class="foot__req">[[ЗАПОЛНИТЬ: ИП ФИО, ИНН, ОГРНИП]]</p>
+    <p class="foot__req">Реквизиты ИП — на вашем сайте будут ваши</p>
     <p><a href="#top">Наверх</a></p>
   </div>
 </footer>

@@ -5,107 +5,464 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Сайт для автосервиса — три варианта</title>
-<meta name="description" content="Три готовых варианта сайта для автосервиса. Откройте каждый и выберите подходящий.">
+<meta name="description" content="Три готовых сайта для автосервиса: Старт, Стандарт и Премиум. Откройте, примерьте свои цвета и выберите подходящий.">
+<meta name="theme-color" content="#0E1418">
+<meta property="og:title" content="Сайт для автосервиса — три варианта">
+<meta property="og:description" content="Откройте, примерьте свои цвета и выберите подходящий.">
+<meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/hero.jpg" as="image">
 <style>
-:root { --brand: #1F3A4D; --deep: #152A38; --accent: #F2B705; --ink: #1B2730; --paper: #EEF2F4; --muted: #4F5E68; --line: #C9D3D9; }
+@font-face { font-family: "Fira Sans Extra Condensed"; font-weight: 800; font-display: swap; src: url(standard/fonts/fira-800-cyr.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Fira Sans Extra Condensed"; font-weight: 800; font-display: swap; src: url(standard/fonts/fira-800-lat.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: "Golos Text"; font-weight: 400 600; font-display: swap; src: url(standard/fonts/golos-cyr.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Golos Text"; font-weight: 400 600; font-display: swap; src: url(standard/fonts/golos-lat.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: "Golos Text"; font-weight: 400 600; font-display: swap; src: url(standard/fonts/golos-rub.woff2) format("woff2"); unicode-range: U+20BD; }
+
+:root {
+  --bg: #0E1418; --bg2: #131B21; --card: #18222A; --card2: #1D2932; --line: #26343F; --line2: #33444F;
+  --ink: #F1F4F6; --ink2: #B4C0C8; --ink3: #8395A1;
+  --accent: #F2B705; --accent2: #FFC81F; --accent-ink: #17130A;
+  --r: 14px; --ease: cubic-bezier(.2,.8,.2,1);
+  --head: "Fira Sans Extra Condensed", Bahnschrift, "Arial Narrow", sans-serif;
+  --text: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --pad: clamp(16px, 4vw, 40px);
+}
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font: 18px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--paper); }
-h1, h2, h3 { font-family: Bahnschrift, "Roboto Condensed", "Arial Narrow", system-ui, sans-serif; line-height: 1.1; margin: 0 0 .5em; }
-a { color: var(--brand); }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.wrap { max-width: 72rem; margin: 0 auto; padding: 0 16px; }
-.head { background: var(--brand); color: #fff; padding: 40px 0 48px; }
-.head h1 { font-size: clamp(2.1rem, 1.4rem + 3.4vw, 3.6rem); max-width: 18ch; }
-.head p { color: #C3D1DA; max-width: 40rem; margin: 0 0 .75rem; font-size: 1.1rem; }
-.how { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 1.25rem; padding: 0; list-style: none; color: #fff; font-weight: 600; }
-.how li::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-right: 8px; }
-.tiers { display: grid; gap: 16px; margin: -24px auto 0; padding-bottom: 48px; }
-@media (min-width: 900px) { .tiers { grid-template-columns: 1fr 1fr 1fr; align-items: stretch; } }
-.tier { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; }
-.tier--top { border: 3px solid var(--accent); }
-.tier h2 { font-size: 2.2rem; margin-bottom: .15em; }
-.tier .size { font-weight: 700; color: var(--muted); margin: 0 0 .75rem; }
-.tier .for { margin: 0 0 1rem; }
-.tier ul { margin: 0 0 1.5rem; padding: 0; list-style: none; flex: 1; }
-.tier li { padding: 8px 0 8px 28px; border-top: 1px solid var(--line); position: relative; }
-.tier li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 12px; height: 7px; border-left: 3px solid #1E7A46; border-bottom: 3px solid #1E7A46; transform: rotate(-45deg); }
-.tier li.plus { font-weight: 600; }
-.btn { display: flex; align-items: center; justify-content: center; min-height: 56px; padding: 12px 20px; border-radius: 6px; background: var(--accent); color: var(--ink); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
-.btn:hover { background: #FFC81F; }
-.note { background: #fff; border-left: 6px solid var(--accent); border-radius: 0 8px 8px 0; padding: 20px; margin: 0 0 24px; }
-.note p { margin: 0 0 .6em; }
-.note p:last-child { margin: 0; }
-.foot { padding: 24px 0 40px; color: var(--muted); font-size: 1rem; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 var(--text); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--head); font-weight: 800; line-height: 1.02; margin: 0; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: 12px; top: -60px; background: var(--accent); color: var(--accent-ink); padding: 10px 14px; border-radius: 8px; z-index: 100; font-weight: 600; }
+.skip:focus { top: 12px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 12px; font: 600 17px var(--text); text-decoration: none; border: 1.5px solid transparent; cursor: pointer; transition: transform .18s var(--ease), background .18s, border-color .18s, box-shadow .2s; }
+.btn:active { transform: scale(.97); }
+.btn--accent { background: var(--accent); color: var(--accent-ink); box-shadow: 0 10px 30px -12px rgba(242,183,5,.7); }
+.btn--accent:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 16px 36px -12px rgba(242,183,5,.8); }
+.btn--line { border-color: rgba(255,255,255,.38); color: #fff; background: rgba(14,20,24,.35); backdrop-filter: blur(6px); }
+.btn--line:hover { border-color: #fff; background: rgba(255,255,255,.08); transform: translateY(-2px); }
+.btn--ghost { border-color: var(--line2); color: var(--ink); background: transparent; }
+.btn--ghost:hover { border-color: var(--ink2); background: rgba(255,255,255,.04); transform: translateY(-2px); }
+.btn svg { width: 18px; height: 18px; flex: none; transition: transform .2s var(--ease); }
+.btn:hover svg { transform: translateX(3px); }
+
+/* ---------- первый экран ---------- */
+.hero { position: relative; min-height: min(100svh, 940px); display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; }
+.hero__ph { position: absolute; inset: 0; z-index: -2; }
+.hero__ph img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 50%; animation: settle 2.4s var(--ease) both; }
+@keyframes settle { from { transform: scale(1.08); } }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(10,15,18,.95) 0%, rgba(10,15,18,.8) 38%, rgba(10,15,18,.3) 75%, rgba(10,15,18,.2) 100%),
+              linear-gradient(0deg, var(--bg) 0%, rgba(14,20,24,0) 30%); }
+.hero > .wrap { width: 100%; padding-top: 130px; padding-bottom: clamp(48px, 9vh, 96px); }
+.top { position: absolute; top: 0; left: 0; right: 0; z-index: 5; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; }
+.mark { display: flex; align-items: center; gap: 10px; font: 800 22px var(--head); text-decoration: none; min-height: 44px; }
+.mark i { width: 34px; height: 34px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; }
+.mark svg { width: 20px; height: 20px; }
+.top nav { display: flex; gap: 6px; }
+.top nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: var(--ink2); font-weight: 600; font-size: 15px; transition: color .15s, background .15s; }
+.top nav a:hover { color: #fff; background: rgba(255,255,255,.08); }
+.kicker { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border-radius: 99px; background: rgba(242,183,5,.12); border: 1px solid rgba(242,183,5,.35); color: #FFD866; font-weight: 600; font-size: 14px; margin-bottom: 22px; }
+.kicker b { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2.4s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(242,183,5,.6); } 70%, 100% { box-shadow: 0 0 0 10px rgba(242,183,5,0); } }
+.hero h1 { font-size: clamp(46px, 7.4vw, 104px); max-width: 11ch; text-transform: uppercase; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero__lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--ink2); max-width: 36rem; margin: 22px 0 32px; }
+.hero__acts { display: flex; flex-wrap: wrap; gap: 12px; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: clamp(40px, 7vh, 72px); max-width: 860px; background: rgba(255,255,255,.12); border-radius: var(--r); overflow: hidden; border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); }
+.facts div { background: rgba(14,20,24,.62); padding: 16px 18px; }
+.facts b { display: block; font: 800 30px/1 var(--head); color: #fff; margin-bottom: 4px; }
+.facts span { font-size: 14px; color: var(--ink2); }
+[data-enter] > * { animation: up .8s var(--ease) both; }
+[data-enter] > *:nth-child(2) { animation-delay: .08s; } [data-enter] > *:nth-child(3) { animation-delay: .16s; }
+[data-enter] > *:nth-child(4) { animation-delay: .24s; } [data-enter] > *:nth-child(5) { animation-delay: .34s; }
+@keyframes up { from { opacity: 0; transform: translateY(18px); } }
+
+/* ---------- секции ---------- */
+.sec { padding: clamp(72px, 11vh, 120px) 0; }
+.sec__h { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; margin-bottom: 40px; }
+.sec__h h2 { font-size: clamp(36px, 5vw, 64px); max-width: 15ch; text-transform: uppercase; }
+.sec__h p { color: var(--ink2); max-width: 30rem; margin: 0; }
+.eyebrow { font: 600 13px var(--text); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
+
+/* ---------- примерка ---------- */
+.try { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.studio { display: grid; grid-template-columns: 340px 1fr; gap: 28px; align-items: start; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; display: flex; flex-direction: column; gap: 22px; position: sticky; top: 20px; }
+.panel h3 { font: 600 13px var(--text); letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 10px; }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; background: var(--bg); border-radius: 12px; border: 1px solid var(--line); }
+.seg--2 { grid-template-columns: 1fr 1fr; }
+.seg button { min-height: 44px; border: 0; border-radius: 9px; background: none; color: var(--ink3); font: 600 15px var(--text); cursor: pointer; transition: background .15s, color .15s, transform .12s; }
+.seg button:hover { color: var(--ink); }
+.seg button:active { transform: scale(.96); }
+.seg button[aria-pressed="true"] { background: var(--card2); color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.35); }
+.sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.sw button { aspect-ratio: 1; min-height: 44px; border-radius: 12px; border: 2px solid transparent; cursor: pointer; position: relative; transition: transform .18s var(--ease), border-color .15s;
+  background: linear-gradient(135deg, var(--b) 0 55%, var(--a) 55% 100%); }
+.sw button:hover { transform: translateY(-2px); }
+.sw button[aria-pressed="true"] { border-color: #fff; }
+.sw button[aria-pressed="true"]::after { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/42% no-repeat; }
+.own { display: flex; gap: 10px; }
+.own label { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 0 12px; border-radius: 11px; background: var(--bg); border: 1px solid var(--line); font-size: 14px; color: var(--ink2); cursor: pointer; }
+.own input { width: 30px; height: 30px; border: 0; padding: 0; background: none; cursor: pointer; }
+.own input::-webkit-color-swatch-wrapper { padding: 0; } .own input::-webkit-color-swatch { border: 1px solid rgba(255,255,255,.3); border-radius: 7px; }
+.panel .btn { width: 100%; }
+.hint { font-size: 14px; color: var(--ink3); margin: 0; }
+.stage { position: relative; border-radius: 20px; background: radial-gradient(120% 80% at 50% 0%, #1E2C36 0%, #111A20 70%); border: 1px solid var(--line); min-height: 780px; display: grid; place-items: center; padding: 34px 20px; overflow: hidden; }
+.stage::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 22px 22px; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%); pointer-events: none; }
+.dev { position: relative; transition: width .45s var(--ease), height .45s var(--ease), border-radius .45s var(--ease), padding .45s var(--ease); background: #05080A; box-shadow: 0 40px 90px -30px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.1); }
+.dev--phone { width: 360px; height: 720px; border-radius: 46px; padding: 12px; }
+.dev--desk { width: min(100%, 980px); height: 640px; border-radius: 14px; padding: 30px 0 0; }
+.dev--desk::before { content: ""; position: absolute; top: 11px; left: 14px; width: 50px; height: 9px; background: radial-gradient(circle at 4.5px 4.5px, #FF5F57 4px, transparent 4.5px), radial-gradient(circle at 22.5px 4.5px, #FEBC2E 4px, transparent 4.5px), radial-gradient(circle at 40.5px 4.5px, #28C840 4px, transparent 4.5px); }
+.screen { width: 100%; height: 100%; overflow: hidden; border-radius: 35px; background: #fff; position: relative; }
+.dev--desk .screen { border-radius: 0 0 14px 14px; }
+.screen iframe { border: 0; display: block; transform-origin: 0 0; }
+.loader { position: absolute; inset: 0; display: grid; place-items: center; background: #fff; transition: opacity .3s; }
+.loader i { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #DDE3E7; border-top-color: #1F3A4D; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader.off { opacity: 0; pointer-events: none; }
+
+/* ---------- тарифы ---------- */
+.tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.tier { position: relative; display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: transform .25s var(--ease), border-color .2s, box-shadow .25s; }
+.tier:hover { transform: translateY(-2px); border-color: var(--line2); box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
+.tier__ph { aspect-ratio: 16 / 9; overflow: hidden; position: relative; }
+.tier__ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.tier:hover .tier__ph img { transform: scale(1.03); }
+.tier__ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--card) 0%, rgba(24,34,42,0) 60%); }
+.tier__b { padding: 0 24px 26px; margin-top: -30px; position: relative; display: flex; flex-direction: column; flex: 1; }
+.tier__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.tier h3 { font-size: 46px; text-transform: uppercase; }
+.size { font-weight: 600; color: var(--ink3); font-size: 14px; white-space: nowrap; }
+.for { color: var(--ink2); margin: 10px 0 18px; font-size: 16px; min-height: 3.1em; }
+.tier--top { border-color: rgba(242,183,5,.55); background: linear-gradient(180deg, #232716 0%, var(--card) 45%); box-shadow: 0 0 0 1px rgba(242,183,5,.18), 0 30px 80px -40px rgba(242,183,5,.45); }
+.tier--top .tier__ph::after { background: linear-gradient(0deg, #1F2519 0%, rgba(24,34,42,0) 60%); }
+.badge { position: absolute; top: 16px; right: 16px; z-index: 2; background: var(--accent); color: var(--accent-ink); font: 700 13px var(--text); padding: 6px 11px; border-radius: 99px; }
+.lst-t { font: 600 12.5px var(--text); letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); margin: 6px 0 8px; }
+.lst { list-style: none; margin: 0 0 18px; padding: 0; }
+.lst li { position: relative; padding: 8px 0 8px 30px; border-top: 1px solid var(--line); font-size: 15.5px; }
+.lst li::before { content: ""; position: absolute; left: 2px; top: 12px; width: 18px; height: 18px; border-radius: 50%; background: rgba(61,203,127,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8.5' fill='none' stroke='%233DCB7F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/70% no-repeat; }
+.lst li.inh { color: var(--ink3); }
+.ask { background: rgba(0,0,0,.22); border: 1px dashed var(--line2); border-radius: 14px; padding: 14px 16px 16px; margin-bottom: 22px; flex: 1; }
+.ask .lst-t { color: var(--accent); margin-top: 0; }
+.ask ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.ask li { display: flex; gap: 10px; font-size: 15px; color: var(--ink2); line-height: 1.4; }
+.ask li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--accent); }
+.ask li b { color: var(--ink); font-weight: 600; }
+.tier__acts { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.tier__acts .btn { padding: 0 18px; }
+
+/* ---------- как работаем ---------- */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; counter-reset: s; }
+.step { padding: 26px 22px 24px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); }
+.step::before { counter-increment: s; content: "0" counter(s); font: 800 54px/1 var(--head); color: transparent; -webkit-text-stroke: 1.5px var(--line2); display: block; margin-bottom: 18px; transition: -webkit-text-stroke-color .25s; }
+.step:hover::before { -webkit-text-stroke-color: var(--accent); }
+.step h3 { font-size: 26px; text-transform: uppercase; margin-bottom: 8px; }
+.step p { margin: 0; color: var(--ink2); font-size: 15.5px; }
+.split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; margin-top: 18px; }
+.split__ph { border-radius: 16px; overflow: hidden; min-height: 340px; }
+.split__ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.split__ph:hover img { transform: scale(1.02); }
+.note { border-radius: 16px; background: var(--card); border: 1px solid var(--line); padding: 30px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.note h3 { font-size: 36px; text-transform: uppercase; }
+.note p { margin: 0; color: var(--ink2); }
+.note p b { color: var(--ink); }
+
+/* ---------- финал ---------- */
+.final { position: relative; overflow: hidden; isolation: isolate; text-align: center; padding: clamp(100px, 17vh, 170px) 0; }
+.final img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.final::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(14,20,24,.97), rgba(14,20,24,.74)); }
+.final h2 { font-size: clamp(42px, 6.4vw, 88px); text-transform: uppercase; max-width: 14ch; margin: 0 auto 18px; }
+.final p { color: var(--ink2); max-width: 34rem; margin: 0 auto 30px; font-size: 19px; }
+.foot { border-top: 1px solid var(--line); padding: 26px 0 34px; color: var(--ink3); font-size: 13px; }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 30px; }
+
+@media (max-width: 1080px) {
+  .studio { grid-template-columns: 1fr; }
+  .panel { position: static; display: grid; grid-template-columns: 1fr 1fr; }
+  .panel > :nth-last-child(-n+2) { grid-column: 1 / -1; }
+  .tiers { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .top nav { display: none; }
+  .hero::before { background: linear-gradient(0deg, rgba(10,15,18,.97) 0%, rgba(10,15,18,.84) 55%, rgba(10,15,18,.5) 100%); }
+  .hero__acts .btn { flex: 1 1 100%; }
+  .facts { grid-template-columns: 1fr; }
+  .facts div { display: flex; align-items: baseline; gap: 12px; }
+  .facts b { font-size: 24px; min-width: 2.4em; }
+  .panel { grid-template-columns: 1fr; }
+  .stage { min-height: 0; padding: 22px 8px; }
+  .dev--phone { width: 300px; height: 600px; border-radius: 40px; padding: 10px; }
+  .dev--phone .screen { border-radius: 31px; }
+  .dev--desk { height: 420px; }
+  .steps { grid-template-columns: 1fr; }
+  .tier h3 { font-size: 40px; }
+  .tier__acts { grid-template-columns: 1fr; }
+  .badge { position: static; display: inline-block; margin: 0 0 10px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-<header class="head">
-  <div class="wrap">
-    <h1>Сайт для вашего автосервиса: три варианта</h1>
-    <p>Все три — готовые рабочие сайты. Откройте каждый, полистайте и попробуйте записаться. Потом напишите, какой вариант вам ближе.</p>
-    <ul class="how">
-      <li>Лучше смотреть с телефона — так зайдут ваши клиенты</li>
-      <li>Ничего не нужно скачивать</li>
-    </ul>
+<a class="skip" href="#main">К содержанию</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".16"/><path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero__ph"><img src="img/hero.jpg" alt="Машина на подъёмнике в боксе автосервиса" width="2400" height="1350" fetchpriority="high"></div>
+  <div class="top"><div class="wrap">
+    <a class="mark" href="#main"><i><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="16" r="6" fill="none" stroke="#17130A" stroke-width="3.2"/><path d="M17 16h11M24 16v5M28 16v4" stroke="#17130A" stroke-width="3.2" fill="none" stroke-linecap="round"/></svg></i>Сайты для СТО</a>
+    <nav aria-label="Разделы"><a href="#try">Примерить</a><a href="#tiers">Варианты</a><a href="#how">Как работаем</a></nav>
+  </div></div>
+  <div class="wrap" data-enter>
+    <span class="kicker"><b></b>Три готовых сайта — можно открыть и потыкать</span>
+    <h1>Сайт для вашего <em>автосервиса</em></h1>
+    <p class="hero__lead">Клиент находит вас на картах, открывает сайт и сразу видит цены, адрес и кнопку записи. Заявка приходит вам в Telegram и на почту.</p>
+    <div class="hero__acts">
+      <a class="btn btn--accent" href="#try">Примерить свои цвета<svg aria-hidden="true"><use href="#arr"/></svg></a>
+      <a class="btn btn--line" href="#tiers">Сравнить варианты</a>
+    </div>
+    <div class="facts">
+      <div><b>1–17</b><span>страниц: от визитки до страницы под каждую услугу</span></div>
+      <div><b>0 ₽</b><span>в месяц за конструктор: сайт ваш, на любом хостинге</span></div>
+      <div><b>24/7</b><span>запись онлайн, даже когда сервис закрыт</span></div>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-  <div class="tiers">
-    <section class="tier" aria-labelledby="t1">
-      <h2 id="t1">Старт</h2>
-      <p class="size">1 страница</p>
-      <p class="for">Чтобы по ссылке из Яндекс Карт открывался аккуратный сайт с ценами, адресом и кнопкой «Позвонить».</p>
-      <ul>
-        <li>Телефон, адрес и режим работы на первом экране</li>
-        <li>«Сейчас открыто / закрыто» и когда перезвоните</li>
-        <li>Услуги, цены «от», как проходит ремонт, гарантия</li>
-        <li>Запись: имя, телефон, услуга, фото поломки</li>
-        <li>WhatsApp и Telegram, если заявка не ушла</li>
-      </ul>
-      <a class="btn" href="start/">Открыть «Старт»</a>
-    </section>
+<main id="main">
+  <section class="sec try" id="try" aria-labelledby="try-h">
+    <div class="wrap">
+      <div class="sec__h">
+        <div><span class="eyebrow">Примерка</span><h2 id="try-h">Сайт в ваших цветах</h2></div>
+        <p>Выберите вариант и цвета, как на вашей вывеске. Пример живой: листайте, жмите кнопки, попробуйте записаться.</p>
+      </div>
+      <div class="studio">
+        <div class="panel">
+          <div><h3>Вариант</h3>
+            <div class="seg" id="tier" role="group" aria-label="Вариант сайта">
+              <button type="button" data-t="start" aria-pressed="false">Старт</button>
+              <button type="button" data-t="standard" aria-pressed="true">Стандарт</button>
+              <button type="button" data-t="premium" aria-pressed="false">Премиум</button>
+            </div></div>
+          <div><h3>Экран</h3>
+            <div class="seg seg--2" id="dev" role="group" aria-label="Экран">
+              <button type="button" data-d="phone" aria-pressed="true">Телефон</button>
+              <button type="button" data-d="desk" aria-pressed="false">Компьютер</button>
+            </div></div>
+          <div><h3>Цвета</h3>
+            <div class="sw" id="sw" role="group" aria-label="Готовые сочетания цветов">
+              <button type="button" style="--b:#1F3A4D;--a:#F2B705" data-b="#1F3A4D" data-a="#F2B705" aria-label="Синий с жёлтым" aria-pressed="true"></button>
+              <button type="button" style="--b:#1C1C1E;--a:#E63B2E" data-b="#1C1C1E" data-a="#E63B2E" aria-label="Чёрный с красным" aria-pressed="false"></button>
+              <button type="button" style="--b:#0F3B2E;--a:#7BD34B" data-b="#0F3B2E" data-a="#7BD34B" aria-label="Зелёный" aria-pressed="false"></button>
+              <button type="button" style="--b:#12305E;--a:#3AA0FF" data-b="#12305E" data-a="#3AA0FF" aria-label="Синий с голубым" aria-pressed="false"></button>
+              <button type="button" style="--b:#2A2A2A;--a:#FF7A00" data-b="#2A2A2A" data-a="#FF7A00" aria-label="Графит с оранжевым" aria-pressed="false"></button>
+              <button type="button" style="--b:#4A1414;--a:#F5C542" data-b="#4A1414" data-a="#F5C542" aria-label="Бордовый с золотым" aria-pressed="false"></button>
+              <button type="button" style="--b:#23313A;--a:#22C3A6" data-b="#23313A" data-a="#22C3A6" aria-label="Асфальт с бирюзой" aria-pressed="false"></button>
+              <button type="button" style="--b:#3B2A1A;--a:#E8A33D" data-b="#3B2A1A" data-a="#E8A33D" aria-label="Коричневый с медным" aria-pressed="false"></button>
+            </div></div>
+          <div><h3>Или свои</h3>
+            <div class="own">
+              <label>Основной <input type="color" id="cb" value="#1F3A4D"></label>
+              <label>Кнопки <input type="color" id="ca" value="#F2B705"></label>
+            </div></div>
+          <a class="btn btn--accent" id="openT" href="standard/" target="_blank" rel="noopener">Открыть во весь экран<svg aria-hidden="true"><use href="#arr"/></svg></a>
+          <p class="hint">На вашем сайте будут ваши цвета, логотип, фото и тексты. Здесь — пример на вымышленном сервисе «Ключ».</p>
+        </div>
+        <div class="stage">
+          <div class="dev dev--phone" id="device">
+            <div class="screen" id="screen">
+              <iframe id="frame" title="Живой пример сайта" src="standard/"></iframe>
+              <div class="loader" id="loader"><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="tier" aria-labelledby="t2">
-      <h2 id="t2">Стандарт</h2>
-      <p class="size">5 разделов</p>
-      <p class="for">Чтобы записывать клиентов на время, принимать вызовы мастера и заявки от таксопарков.</p>
-      <ul>
-        <li>Всё из «Старта»</li>
-        <li class="plus">Запись на день и час по вашему графику</li>
-        <li class="plus">«Вызвать мастера» с определением местоположения</li>
-        <li class="plus">Галерея мастерской, частые вопросы</li>
-        <li class="plus">Блок и заявка для автопарков</li>
-        <li class="plus">Кнопки «Записаться / Позвонить» всегда внизу экрана</li>
-      </ul>
-      <a class="btn" href="standard/">Открыть «Стандарт»</a>
-    </section>
+  <section class="sec" id="tiers" aria-labelledby="tiers-h">
+    <div class="wrap">
+      <div class="sec__h">
+        <div><span class="eyebrow">Варианты</span><h2 id="tiers-h">Старт, Стандарт или Премиум</h2></div>
+        <p>У каждого варианта — что уже внутри и что можно попросить сделать под себя. Чем выше вариант, тем больше подгоняем под ваш сервис.</p>
+      </div>
+      <div class="tiers">
+        <article class="tier" aria-labelledby="t1">
+          <div class="tier__ph"><img src="img/t-start.jpg" alt="Колесо машины в автосервисе" width="800" height="450" loading="lazy"></div>
+          <div class="tier__b">
+            <div class="tier__top"><h3 id="t1">Старт</h3><span class="size">1 страница</span></div>
+            <p class="for">Аккуратная визитка: открыли по ссылке из Яндекс Карт — увидели цены и позвонили.</p>
+            <p class="lst-t">Уже внутри</p>
+            <ul class="lst">
+              <li>Телефон, адрес и часы работы на первом экране</li>
+              <li>«Сейчас открыто / закрыто»</li>
+              <li>Услуги и цены «от», гарантия</li>
+              <li>Заявка с фото поломки</li>
+              <li>WhatsApp и Telegram в одно касание</li>
+            </ul>
+            <div class="ask"><p class="lst-t">Можно попросить</p>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Свои цвета</b> под вывеску и логотип</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>До 6 своих фото:</b> бокс, ворота, мастера</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Свой список услуг</b> и цены, до 10 позиций</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Один блок на выбор:</b> акция месяца, отзывы или «как проехать»</span></li>
+              </ul>
+            </div>
+            <div class="tier__acts"><a class="btn btn--ghost" href="start/">Открыть сайт</a><button class="btn btn--ghost" type="button" data-try="start" aria-label="Примерить «Старт»">Примерить</button></div>
+          </div>
+        </article>
 
-    <section class="tier tier--top" aria-labelledby="t3">
-      <h2 id="t3">Премиум</h2>
-      <p class="size">17 страниц</p>
-      <p class="for">Чтобы клиенты находили вас в поиске по каждой услуге и сами прикидывали цену до звонка.</p>
-      <ul>
-        <li>Всё из «Стандарта»</li>
-        <li class="plus">Своя страница под каждую услугу — для Яндекса и Google</li>
-        <li class="plus">Калькулятор цены под класс машины</li>
-        <li class="plus">Запись по шагам, ничего не теряется</li>
-        <li class="plus">«До / после» для кузовных работ</li>
-        <li class="plus">Тёмная тема, анимация, схема зон выезда</li>
-      </ul>
-      <a class="btn" href="premium/">Открыть «Премиум»</a>
-    </section>
-  </div>
+        <article class="tier" aria-labelledby="t2">
+          <div class="tier__ph"><img src="img/t-standard.jpg" alt="Машины на подъёмниках в боксе" width="800" height="450" loading="lazy"></div>
+          <div class="tier__b">
+            <div class="tier__top"><h3 id="t2">Стандарт</h3><span class="size">5 разделов</span></div>
+            <p class="for">Чтобы записывать клиентов на время, принимать вызовы мастера и заявки от таксопарков.</p>
+            <p class="lst-t">Уже внутри</p>
+            <ul class="lst">
+              <li class="inh">Всё из «Старта»</li>
+              <li>Запись на день и час по вашему графику</li>
+              <li>Вызов мастера с геолокацией</li>
+              <li>Галерея мастерской и частые вопросы</li>
+              <li>Раздел и заявка для автопарков</li>
+            </ul>
+            <div class="ask"><p class="lst-t">Можно попросить</p>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Свой стиль:</b> цвета, шрифт, вид кнопок</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Галерея до 20 фото</b> и мастера с именами</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Ещё одна вкладка:</b> «Акции», «Шиномонтаж», «Запчасти на заказ» или «Вакансии»</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Свой график записи:</b> часы, выходные, сколько длится каждая услуга</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Отзывы</b> с Яндекс Карт или 2ГИС</span></li>
+              </ul>
+            </div>
+            <div class="tier__acts"><a class="btn btn--ghost" href="standard/">Открыть сайт</a><button class="btn btn--ghost" type="button" data-try="standard" aria-label="Примерить «Стандарт»">Примерить</button></div>
+          </div>
+        </article>
 
-  <div class="note">
-    <p><b>Это пример на вымышленном сервисе «Ключ».</b> На вашем сайте будут ваши название, адрес, телефон, цены, фото мастерской и настоящие отзывы клиентов.</p>
-    <p>Заявки с сайта приходят вам на почту и в Telegram. Сайт работает на любом недорогом хостинге, без ежемесячной платы за конструктор.</p>
-  </div>
+        <article class="tier tier--top" aria-labelledby="t3">
+          <span class="badge">Больше клиентов из поиска</span>
+          <div class="tier__ph"><img src="img/t-premium.jpg" alt="Двигатель под открытым капотом" width="800" height="450" loading="lazy"></div>
+          <div class="tier__b">
+            <div class="tier__top"><h3 id="t3">Премиум</h3><span class="size">17 страниц</span></div>
+            <p class="for">Чтобы находили в Яндексе по каждой услуге и прикидывали цену ещё до звонка.</p>
+            <p class="lst-t">Уже внутри</p>
+            <ul class="lst">
+              <li class="inh">Всё из «Стандарта»</li>
+              <li>Своя страница под каждую услугу</li>
+              <li>Калькулятор цены под класс машины</li>
+              <li>Запись по шагам, «до / после»</li>
+              <li>Тёмная тема, анимация, зоны выезда</li>
+            </ul>
+            <div class="ask"><p class="lst-t">Можно попросить</p>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>До 3 новых страниц:</b> под марки (Kia, Hyundai, VAG) или районы города</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Калькулятор под ваш прайс</b> и ваши классы машин</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Видео мастерской</b> на главной</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>«До / после»</b> с вашими работами</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Зоны выезда</b> по вашим районам и ценам</span></li>
+                <li><svg aria-hidden="true"><use href="#plus"/></svg><span><b>Тёмная тема</b> в ваших цветах</span></li>
+              </ul>
+            </div>
+            <div class="tier__acts"><a class="btn btn--accent" href="premium/">Открыть сайт</a><button class="btn btn--ghost" type="button" data-try="premium" aria-label="Примерить «Премиум»">Примерить</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="how" aria-labelledby="how-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec__h">
+        <div><span class="eyebrow">Как работаем</span><h2 id="how-h">Четыре шага до заявок</h2></div>
+        <p>Писать тексты и придумывать дизайн не нужно — только прислать то, что у вас уже есть.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Выбираете</h3><p>Вариант и цвета — прямо на этой странице.</p></div>
+        <div class="step"><h3>Присылаете</h3><p>Логотип, фото с телефона, прайс, адрес и часы работы.</p></div>
+        <div class="step"><h3>Смотрите черновик</h3><p>Показываю ваш сайт по ссылке и правлю, пока не понравится.</p></div>
+        <div class="step"><h3>Получаете заявки</h3><p>Сайт на вашем домене, заявки — в Telegram и на почту.</p></div>
+      </div>
+      <div class="split">
+        <div class="split__ph"><img src="img/how.jpg" alt="Руки мастера с инструментом" width="1200" height="800" loading="lazy"></div>
+        <div class="note">
+          <h3>Сайт остаётся вашим</h3>
+          <p><b>Никакой абонентки за конструктор.</b> Сайт работает на любом недорогом хостинге, файлы у вас.</p>
+          <p><b>Удобно с телефона.</b> Большие кнопки, номер в одно касание — так к вам заходит большинство клиентов.</p>
+          <p><b>Пример вымышленный.</b> На вашем сайте будут ваши название, адрес, телефон, цены, фото и настоящие отзывы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="fin-h">
+    <img src="img/final.jpg" alt="" width="2000" height="1125" loading="lazy">
+    <div class="wrap">
+      <h2 id="fin-h">Какой вариант берём?</h2>
+      <p>Ответьте на сообщение, в котором была эта ссылка: напишите вариант и пришлите фото вывески или цвета.</p>
+      <a class="btn btn--accent" href="#try">Примерить ещё раз<svg aria-hidden="true"><use href="#arr"/></svg></a>
+    </div>
+  </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap">Понравился вариант — ответьте на сообщение, в котором была эта ссылка, и напишите какой.</div>
-</footer>
+<footer class="foot"><div class="wrap"><span>Сайты для автосервисов · пример на вымышленном сервисе «Ключ»</span><span id="credits">Фото-примеры: <a href="https://commons.wikimedia.org/wiki/File:Car_repair_shop.jpg" rel="nofollow noopener" target="_blank">Martin Vorel</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Honda_CRV_wheel_and_tire_(39637243474).jpg" rel="nofollow noopener" target="_blank">Puddin Tain</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0" rel="license nofollow noopener" target="_blank">CC BY-SA 2.0</a>), <a href="https://commons.wikimedia.org/wiki/File:USMC-100702-M-6457M-002.jpg" rel="nofollow noopener" target="_blank">Unknown author</a> (<a href="https://creativecommons.org/publicdomain/mark/1.0/" rel="license nofollow noopener" target="_blank">Public domain</a>), <a href="https://commons.wikimedia.org/wiki/File:Old_car_engine_showing_various_parts_and_tools_during_maintenance_work_in_a_garage.jpg" rel="nofollow noopener" target="_blank">Shixart1985</a> (<a href="https://creativecommons.org/licenses/by/2.0" rel="license nofollow noopener" target="_blank">CC BY 2.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Hands_repairing_a_car_door_latch_using_a_screwdriver_in_a_workshop_setting.jpg" rel="nofollow noopener" target="_blank">Shixart1985</a> (<a href="https://creativecommons.org/licenses/by/2.0" rel="license nofollow noopener" target="_blank">CC BY 2.0</a>), <a href="https://commons.wikimedia.org/wiki/File:S2000_civic_MDX_service_repair_www.chiautorepair.com_19114_19136_philadelphia.jpg" rel="nofollow noopener" target="_blank">Chiautorepair</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>) — Wikimedia Commons.</span></div></footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var frame = $('frame'), dev = $('device'), screen = $('screen'), loader = $('loader'), open = $('openT'), cb = $('cb'), ca = $('ca');
+  var st = { t: 'standard', d: 'phone', b: '#1F3A4D', a: '#F2B705' };
+  function rgb(h) { h = h.replace('#', ''); return [0, 2, 4].map(function (i) { return parseInt(h.substr(i, 2), 16); }); }
+  function mix(h, k) { return '#' + rgb(h).map(function (v) { v = Math.round(k < 0 ? v * (1 + k) : v + (255 - v) * k); v = Math.max(0, Math.min(255, v)); return ('0' + v.toString(16)).slice(-2); }).join(''); }
+  function lum(h) { var c = rgb(h).map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; }
+  function paint() {
+    try {
+      var r = frame.contentDocument.documentElement, s = r.style;
+      s.setProperty('--brand', st.b); s.setProperty('--brand-deep', mix(st.b, -.3));
+      s.setProperty('--accent', st.a); s.setProperty('--accent-hover', mix(st.a, .18));
+      s.setProperty('--accent-ink', lum(st.a) > .3 ? '#17130A' : '#FFFFFF');
+      var strip = frame.contentDocument.body.firstElementChild;   // полоска «Демо» сверху в примерке не нужна
+      if (strip && /Демо:/.test(strip.textContent)) strip.hidden = true;
+    } catch (e) {}
+  }
+  function fit() {
+    var w = screen.clientWidth, h = screen.clientHeight, base = st.d === 'phone' ? 390 : 1280, k = w / base;
+    frame.style.width = base + 'px'; frame.style.height = Math.ceil(h / k) + 'px'; frame.style.transform = 'scale(' + k + ')';
+  }
+  function load() { loader.classList.remove('off'); frame.src = st.t + '/'; open.href = st.t + '/'; }
+  frame.addEventListener('load', function () { paint(); fit(); setTimeout(function () { loader.classList.add('off'); }, 150); });
+  function press(g, el) { g.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b === el ? 'true' : 'false'); }); }
+  $('tier').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b || b.dataset.t === st.t) return; press(this, b); st.t = b.dataset.t; load(); });
+  $('dev').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; press(this, b); st.d = b.dataset.d;
+    dev.className = 'dev dev--' + st.d; fit(); setTimeout(fit, 480);
+  });
+  $('sw').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; press(this, b);
+    st.b = b.dataset.b; st.a = b.dataset.a; cb.value = st.b; ca.value = st.a; paint();
+  });
+  cb.addEventListener('input', function () { st.b = cb.value; press($('sw'), null); paint(); });
+  ca.addEventListener('input', function () { st.a = ca.value; press($('sw'), null); paint(); });
+  document.querySelectorAll('[data-try]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.dataset.try, g = $('tier');
+      press(g, g.querySelector('[data-t="' + t + '"]')); if (t !== st.t) { st.t = t; load(); }
+      $('try').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  addEventListener('resize', fit);
+  fit();
+})();
+</script>
 </body>
 </html>

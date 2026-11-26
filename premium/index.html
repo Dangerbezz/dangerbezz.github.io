@@ -260,7 +260,8 @@
 </header>
 <main id="main">
 
-<section class="hero hero--p" aria-labelledby="hero-title">
+<section class="hero hero--p hero--photo has-photo" aria-labelledby="hero-title">
+  <div class="bg-photo" aria-hidden="true"><img src="images/ph/hero-960.webp" srcset="images/ph/hero-500.webp 500w, images/ph/hero-960.webp 960w, images/ph/hero-1280.webp 1280w, images/ph/hero-1920.webp 1920w" sizes="100vw" width="1280" height="960" alt="" fetchpriority="high" decoding="async"></div>
   <div class="wrap hero__grid">
     <div class="hero__text">
       <h1 id="hero-title">Ремонт и обслуживание машин в Твери</h1>
@@ -271,26 +272,11 @@
       </div>
       <p class="hero__road">Встали на дороге? <a href="tel:+79000000000">Звоните</a> или <a href="vyezd.html#vyzov">вызовите мастера</a>.</p>
     </div>
-    <div class="hero__art"><svg class="hero-art" viewBox="0 0 560 420" role="img" aria-label="Рисунок: машина на подъёмнике и график диагностики">
-  <g data-parallax="-0.06">
-    <path class="ha-grid" d="M0 380h560M0 340h560M0 300h560M60 0v420M160 0v420M260 0v420M360 0v420M460 0v420"/>
-  </g>
-  <g class="ha-lift" data-parallax="0.04">
-    <path class="ha-draw ha-post" d="M110 400V150M450 400V150"/>
-    <g class="ha-rise">
-      <path class="ha-draw ha-arm" d="M110 300h340"/>
-      <path class="ha-draw ha-car" d="M135 290c4-30 22-44 52-50l52-34c18-12 36-16 58-16h56c30 0 52 10 70 32l26 18c22 4 38 16 40 50"/>
-      <path class="ha-draw ha-car" d="M250 210l-10 32h178l-30-32"/>
-      <circle class="ha-draw ha-wheel" cx="200" cy="292" r="26"/>
-      <circle class="ha-draw ha-wheel" cx="390" cy="292" r="26"/>
-    </g>
-    <path class="ha-draw ha-floor" d="M40 400h480"/>
-  </g>
-  <g class="ha-scope" data-parallax="-0.03">
-    <rect class="ha-draw ha-screen" x="330" y="30" width="200" height="110" rx="8"/>
-    <path class="ha-draw ha-wave" d="M345 100l22-2 12-30 14 52 14-40 12 18h20l10-24 14 30 12-12h30"/>
-  </g>
-</svg></div>
+    <ul class="hero__facts">
+      <li><b>40 мин</b><span>диагностика с распечаткой ошибок</span></li>
+      <li><b>6 мес.</b><span>гарантия на работу или 10 000 км</span></li>
+      <li><b>от 1 000 ₽</b><span>выезд мастера по Твери</span></li>
+    </ul>
   </div>
 </section>
 <section class="strip" aria-label="Главное за пять секунд"><div class="wrap">
@@ -317,7 +303,8 @@
   </div>
 </section>
 
-<section class="section section--brand" aria-labelledby="num-title">
+<section class="section section--brand has-photo" aria-labelledby="num-title">
+  <div class="bg-photo" aria-hidden="true"><img src="images/ph/workshop-960.webp" srcset="images/ph/workshop-500.webp 500w, images/ph/workshop-960.webp 960w, images/ph/workshop-1280.webp 1280w, images/ph/workshop-1920.webp 1920w" sizes="100vw" width="1280" height="854" alt="" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <h2 id="num-title" class="sr">Сервис в цифрах</h2>
     <ul class="counters">
@@ -337,7 +324,7 @@
       <ol class="tl" data-timeline><li><span class="tl__n" aria-hidden="true">1</span><div><h3>Звоните или оставляете заявку</h3><p>Договариваемся о времени. Если не знаете, что сломалось, — начнём с диагностики.</p></div></li><li><span class="tl__n" aria-hidden="true">2</span><div><h3>Принимаем машину при вас</h3><p>Записываем пробег, жалобы и что видно снаружи. Вы получаете копию.</p></div></li><li><span class="tl__n" aria-hidden="true">3</span><div><h3>Называем цену до начала работ</h3><p>Отдельно работа и запчасти. Запчасти можно привезти свои.</p></div></li><li><span class="tl__n" aria-hidden="true">4</span><div><h3>Делаем только согласованное</h3><p>Нашли ещё что-то — сначала звоним вам, без вашего «да» не делаем.</p></div></li><li><span class="tl__n" aria-hidden="true">5</span><div><h3>Отдаём машину и старые детали</h3><p>Заказ-наряд с гарантией 6 месяцев или 10 000 км. Оплата наличными, картой или переводом.</p></div></li></ol>
     </div>
     <div class="sticky-side">
-      <figure class="ph "><div class="ph__box" role="img" aria-label="Место для фото: приёмка машины: мастер и клиент у капота"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14h8l4-6h12l4 6h8v26H6z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Фото: приёмка машины: мастер и клиент у капота</span><code>images/reception.jpg</code></div></figure>
+      <figure class="ph ph--img "><img src="images/ph/reception-960.webp" srcset="images/ph/reception-500.webp 500w, images/ph/reception-960.webp 960w, images/ph/reception-1280.webp 1280w" sizes="(max-width: 899px) 100vw, 45vw" width="1280" height="690" alt="Машина на стенде развал-схождения" loading="lazy" decoding="async"></figure>
       <p class="muted">Старые детали отдаём вам — можно посмотреть, что именно поменяли.</p>
     </div>
   </div>
@@ -363,7 +350,8 @@
   </div>
 </section>
 
-<section class="section section--brand" aria-labelledby="road-title">
+<section class="section section--brand has-photo" aria-labelledby="road-title">
+  <div class="bg-photo" aria-hidden="true"><img src="images/ph/vyezd-960.webp" srcset="images/ph/vyezd-500.webp 500w, images/ph/vyezd-960.webp 960w, images/ph/vyezd-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt="" loading="lazy" decoding="async"></div>
   <div class="wrap road">
     <div>
       <h2 id="road-title">Машина не едет? Приедем</h2>
@@ -405,12 +393,11 @@
       <p><a class="link-more" href="kuzov.html">Кузовной ремонт: цены и запись</a></p>
     </div>
     <figure class="ba " data-ba style="--pos:50%">
-  <img src="images/ba/door-after.svg" alt="После: та же дверь выровнена и покрашена" width="800" height="500" loading="lazy">
-  <div class="ba__before"><img src="images/ba/door-before.svg" alt="До: вмятина и царапины на передней двери" width="800" height="500" loading="lazy"></div>
+  <img src="images/ph/kuzov-960.webp" srcset="images/ph/kuzov-500.webp 500w, images/ph/kuzov-960.webp 960w, images/ph/kuzov-1280.webp 1280w" sizes="(max-width: 899px) 100vw, 50vw" width="1280" height="924" alt="После: крыло отполировано до блеска" loading="lazy" decoding="async">
+  <div class="ba__before"><img src="images/ph/kuzov-before.webp" alt="До: тусклое крыло в разводах и мелких царапинах" width="1280" height="924" loading="lazy" decoding="async"></div>
   <span class="ba__tag ba__tag--l" aria-hidden="true">До</span><span class="ba__tag ba__tag--r" aria-hidden="true">После</span>
   <span class="ba__handle" aria-hidden="true"></span>
   <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Сравнить: двигайте, чтобы увидеть до и после">
-  <figcaption>Иллюстрация. Сюда ставятся фото ваших работ: <code>images/ba/</code></figcaption>
 </figure>
   </div>
 </section>
@@ -465,8 +452,9 @@
     </div>
     <nav aria-label="Услуги"><p><b>Услуги</b></p><ul><li><a href="diagnostika.html">Компьютерная диагностика</a></li><li><a href="to.html">ТО: масло и фильтры</a></li><li><a href="hodovaya.html">Ходовая и подвеска</a></li><li><a href="shinomontazh.html">Шиномонтаж</a></li><li><a href="kuzov.html">Кузовной ремонт и покраска</a></li><li><a href="elektrika.html">Автоэлектрика</a></li><li><a href="kondicioner.html">Кондиционер</a></li><li><a href="vyezd.html">Выезд мастера</a></li></ul></nav>
     <nav aria-label="Разделы в подвале"><p><b>Сервис</b></p><ul><li><a href="zapis.html">Запись онлайн</a></li><li><a href="ceny.html">Цены</a></li><li><a href="o-nas.html">О нас</a></li><li><a href="avtoparki.html">Автопаркам</a></li><li><a href="kontakty.html">Контакты</a></li><li><a href="privacy.html">Политика конфиденциальности</a></li></ul>
-      <p class="foot__req">[[ЗАПОЛНИТЬ: ИП ФИО, ИНН, ОГРНИП]]</p></nav>
+      <p class="foot__req">Реквизиты ИП — на вашем сайте будут ваши</p></nav>
   </div>
+  <div class="wrap"><p class="credits">Фото-примеры: <a href="https://commons.wikimedia.org/wiki/File:Chery_A1_-_service_shop_in_Ukraine_(7).jpg" rel="nofollow noopener" target="_blank">ANT Berezhnyi</a> (<a href="https://creativecommons.org/licenses/by/3.0" rel="license nofollow noopener" target="_blank">CC BY 3.0</a>), <a href="https://commons.wikimedia.org/wiki/File:The_tire_wheel_of_Mercedes-Benz_A_180_Style_(W177).jpg" rel="nofollow noopener" target="_blank">Tokumeigakarinoaoshima</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>), <a href="https://commons.wikimedia.org/wiki/File:LADA_Vesta_Sport,_Wheel_alignment.jpg" rel="nofollow noopener" target="_blank">Dmitry Racer</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Changing_car_tire_20170513_01.jpg" rel="nofollow noopener" target="_blank">Santeri Viinamäki</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Car_repair_shop.jpg" rel="nofollow noopener" target="_blank">Martin Vorel</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>) — Wikimedia Commons.</p></div>
 </footer>
 <nav class="bar" aria-label="Быстрые действия">
   <a href="zapis.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Записаться</a>
