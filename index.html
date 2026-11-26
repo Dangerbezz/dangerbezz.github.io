@@ -114,28 +114,20 @@ img { display: block; max-width: 100%; }
 .own input::-webkit-color-swatch-wrapper { padding: 0; } .own input::-webkit-color-swatch { border: 1px solid rgba(255,255,255,.3); border-radius: 7px; }
 .panel .btn { width: 100%; }
 .hint { font-size: 14px; color: var(--ink3); margin: 0; }
-.stage { position: relative; border-radius: 20px; background: radial-gradient(120% 80% at 50% 0%, #1E2C36 0%, #111A20 70%); border: 1px solid var(--line); min-height: 800px; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 40px 20px 60px; overflow: hidden; perspective: 1900px; perspective-origin: 50% 40%; }
+.stage { position: relative; border-radius: 20px; background: radial-gradient(120% 80% at 50% 0%, #1E2C36 0%, #111A20 70%); border: 1px solid var(--line); min-height: 800px; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 40px 20px 60px; overflow: hidden; }
 .stage::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 22px 22px; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%); pointer-events: none; }
 .stage::after { content: ""; position: absolute; left: 50%; top: 46%; width: 70%; height: 60%; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(242,183,5,.13), transparent); pointer-events: none; }
-/* 3D-подставка: наклон задаётся переменными, под курсором устройство разворачивается к зрителю */
-.rig { --rx: 7deg; --ry: -18deg; --rz: 1.5deg; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; transform-style: preserve-3d;
-  transform: rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz)); transition: transform .7s var(--ease); width: 100%; }
-.rig.face { --rx: 0deg; --ry: 0deg; --rz: 0deg; }
+.rig { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; width: 100%; }
 .floor { position: absolute; left: 50%; bottom: 34px; width: 420px; height: 46px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.75), transparent); filter: blur(6px); z-index: 0; transition: width .45s var(--ease); }
 .stage.is-desk .floor { width: min(90%, 980px); bottom: 24px; }
-.dev { position: relative; transform-style: preserve-3d; display: flex; flex-direction: column; transition: width .45s var(--ease), height .45s var(--ease), border-radius .45s var(--ease), padding .45s var(--ease);
+.dev { position: relative; display: flex; flex-direction: column; transition: width .45s var(--ease), height .45s var(--ease), border-radius .45s var(--ease), padding .45s var(--ease);
   background: linear-gradient(145deg, #4A5058 0%, #1A1D21 18%, #0B0D10 50%, #22262B 82%, #565D66 100%);
   box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.22), inset 0 0 0 4px #07090B, 0 60px 90px -40px rgba(0,0,0,.9), 0 24px 40px -20px rgba(0,0,0,.6); }
-.dev::before, .dev::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
-.dev::before { background: #1C2025; transform: translateZ(-6px); box-shadow: 0 0 0 1px #2E343B; }
-.dev::after { background: #0C0E11; transform: translateZ(-12px); box-shadow: 0 0 0 1px #262B31; }
 .dev--phone { width: 360px; height: 730px; border-radius: 54px; padding: 13px; }
 .dev--desk { width: min(100%, 960px); height: 600px; border-radius: 18px 18px 8px 8px; padding: 14px 14px 16px; }
-.screen { flex: 1; width: 100%; min-height: 0; overflow: hidden; border-radius: 42px; background: #fff; position: relative; transform: translateZ(1px); }
+.screen { flex: 1; width: 100%; min-height: 0; overflow: hidden; border-radius: 42px; background: #fff; position: relative; }
 .dev--desk .screen { border-radius: 0 0 4px 4px; }
 .screen iframe { border: 0; display: block; transform-origin: 0 0; }
-.glare { position: absolute; inset: 0; pointer-events: none; z-index: 3; border-radius: inherit; background: linear-gradient(115deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 22%, rgba(255,255,255,0) 38%); transition: opacity .6s; }
-.rig.face .glare { opacity: .25; }
 .status { flex: none; height: 46px; display: flex; align-items: center; justify-content: space-between; padding: 6px 26px 0 30px; border-radius: 42px 42px 0 0; background: #0B1117; color: #fff; font: 600 14px var(--text); position: relative; }
 .status svg { width: 44px; height: 12px; }
 .dev--phone .screen { border-radius: 0 0 42px 42px; }
@@ -147,11 +139,9 @@ img { display: block; max-width: 100%; }
 .bar { display: none; align-items: center; justify-content: center; height: 30px; flex: none; border-radius: 6px 6px 0 0; color: #9AA6B0; font: 12px var(--text);
   background: radial-gradient(circle at 17px 15px, #FF5F57 5px, transparent 5.5px), radial-gradient(circle at 35px 15px, #FEBC2E 5px, transparent 5.5px), radial-gradient(circle at 53px 15px, #28C840 5px, transparent 5.5px),
     linear-gradient(#2B3037, #2B3037) center / 220px 20px no-repeat, #1E2227; }
-.base { display: none; width: calc(min(100%, 960px) * 1.14); max-width: 100%; height: 20px; margin-top: -1px; border-radius: 2px 2px 16px 16px; position: relative; transform: translateZ(1px);
+.base { display: none; width: calc(min(100%, 960px) * 1.14); max-width: 100%; height: 20px; margin-top: -1px; border-radius: 2px 2px 16px 16px; position: relative;
   background: linear-gradient(180deg, #8E959D 0%, #5B6169 30%, #2C3036 100%); box-shadow: 0 30px 40px -18px rgba(0,0,0,.85); }
 .base::before { content: ""; position: absolute; left: 50%; top: 0; width: 18%; height: 7px; transform: translateX(-50%); border-radius: 0 0 10px 10px; background: #3A3F46; }
-.is-desk .rig { --rx: 9deg; --ry: -12deg; --rz: 0deg; }
-.is-desk .rig.face { --rx: 0deg; --ry: 0deg; }
 .is-desk .bar, .is-desk .base { display: flex; }
 .is-desk .island, .is-desk .key { display: none; }
 .loader { position: absolute; inset: 0; display: grid; place-items: center; background: #fff; transition: opacity .3s; z-index: 2; }
@@ -232,8 +222,6 @@ img { display: block; max-width: 100%; }
   .facts b { font-size: 24px; min-width: 2.4em; }
   .panel { grid-template-columns: 1fr; }
   .stage { min-height: 0; padding: 26px 8px 50px; }
-  .rig { --rx: 4deg; --ry: -8deg; --rz: 0deg; }
-  .is-desk .rig { --rx: 5deg; --ry: -6deg; }
   .dev--phone { width: 290px; height: 590px; border-radius: 46px; padding: 11px; }
   .dev--phone .screen { border-radius: 0 0 35px 35px; }
   .status { height: 38px; border-radius: 35px 35px 0 0; padding: 4px 20px 0 24px; font-size: 12px; }
@@ -328,7 +316,6 @@ img { display: block; max-width: 100%; }
               <div class="screen" id="screen">
                 <iframe id="frame" title="Живой пример сайта" src="standard/"></iframe>
                 <div class="loader" id="loader"><i></i></div>
-                <i class="glare" aria-hidden="true"></i>
               </div>
             </div>
             <div class="base" aria-hidden="true"></div>
@@ -512,19 +499,6 @@ img { display: block; max-width: 100%; }
   // подгонка сайта под экран при любом изменении размера (и во время анимации телефон <-> компьютер)
   if (window.ResizeObserver) new ResizeObserver(fit).observe(screen);
   dev.addEventListener('transitionend', fit);
-  // объём: устройство поворачивается за курсором, а под курсором разворачивается к зрителю
-  var stage = $('stage'), rig = $('rig');
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    stage.addEventListener('pointermove', function (e) {
-      var over = dev.contains(e.target);
-      rig.classList.toggle('face', over);
-      if (over) { rig.style.removeProperty('--ry'); rig.style.removeProperty('--rx'); return; }
-      var r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      var by = st.d === 'desk' ? -12 : -18, bx = st.d === 'desk' ? 9 : 7;
-      rig.style.setProperty('--ry', (by + x * 14).toFixed(2) + 'deg'); rig.style.setProperty('--rx', (bx - y * 8).toFixed(2) + 'deg');
-    });
-    stage.addEventListener('pointerleave', function () { rig.classList.remove('face'); rig.style.removeProperty('--ry'); rig.style.removeProperty('--rx'); });
-  }
   fit();
 })();
 </script>
