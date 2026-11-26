@@ -114,7 +114,7 @@ img { display: block; max-width: 100%; }
 .own input::-webkit-color-swatch-wrapper { padding: 0; } .own input::-webkit-color-swatch { border: 1px solid rgba(255,255,255,.3); border-radius: 7px; }
 .panel .btn { width: 100%; }
 .hint { font-size: 14px; color: var(--ink3); margin: 0; }
-.stage { position: relative; border-radius: 20px; background: radial-gradient(120% 80% at 50% 0%, #1E2C36 0%, #111A20 70%); border: 1px solid var(--line); min-height: 800px; display: grid; place-items: center; padding: 40px 20px 60px; overflow: hidden; perspective: 1900px; perspective-origin: 50% 40%; }
+.stage { position: relative; border-radius: 20px; background: radial-gradient(120% 80% at 50% 0%, #1E2C36 0%, #111A20 70%); border: 1px solid var(--line); min-height: 800px; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 40px 20px 60px; overflow: hidden; perspective: 1900px; perspective-origin: 50% 40%; }
 .stage::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 22px 22px; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%); pointer-events: none; }
 .stage::after { content: ""; position: absolute; left: 50%; top: 46%; width: 70%; height: 60%; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(242,183,5,.13), transparent); pointer-events: none; }
 /* 3D-подставка: наклон задаётся переменными, под курсором устройство разворачивается к зрителю */
