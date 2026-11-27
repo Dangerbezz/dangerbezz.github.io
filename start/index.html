@@ -18,6 +18,7 @@
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/live.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -78,7 +79,7 @@
 
 <!-- 1. ПЕРВЫЙ ЭКРАН -->
 <section class="hero hero--photo has-photo" aria-labelledby="hero-title">
-  <div class="bg-photo" aria-hidden="true"><img src="images/ph/hero-960.webp" srcset="images/ph/hero-500.webp 500w, images/ph/hero-960.webp 960w, images/ph/hero-1280.webp 1280w, images/ph/hero-1920.webp 1920w" sizes="100vw" width="1280" height="960" alt="" fetchpriority="high" decoding="async"></div>
+  <div class="bg-photo" aria-hidden="true"><img src="images/ph/hero-960.webp" srcset="images/ph/hero-500.webp 500w, images/ph/hero-960.webp 960w, images/ph/hero-1280.webp 1280w, images/ph/hero-1920.webp 1920w" sizes="100vw" width="1280" height="853" alt="" fetchpriority="high" decoding="async"></div>
   <div class="wrap hero__grid">
     <div class="hero__text">
       <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>Пн–Пт 9:00–20:00, Сб 10:00–18:00</span></p>
@@ -109,58 +110,19 @@
 <!-- 2. УСЛУГИ -->
 <section class="section" id="uslugi" aria-labelledby="uslugi-title">
   <div class="wrap">
-    <h2 id="uslugi-title">С чем к нам приезжают</h2>
-    <p class="section__lead">Не знаете, как называется поломка — опишите, что чувствуете. Ниже частые случаи и чем мы поможем.</p>
-    <ul class="symptoms">
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30h32v6H8zM12 30l3-10h18l3 10M16 36v4M32 36v4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M24 9.5v3" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Горит «чек» или машина ведёт себя странно</h3>
-        <p><b>Компьютерная диагностика.</b> Читаем ошибки всех блоков, смотрим датчики на работающем моторе, отдаём распечатку.</p>
-        <a class="link-book" href="#zapis" data-book="Компьютерная диагностика">Записаться на диагностику</a>
-      </li>
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 8h12v8l6 6v18H12V22l6-6z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 30c2-3 4-3 6 0s4 3 6 0" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Подошёл пробег на замену масла</h3>
-        <p><b>ТО.</b> Меняем масло и фильтры, заодно бесплатно смотрим подвеску на подъёмнике. Масло можно привезти своё.</p>
-        <a class="link-book" href="#zapis" data-book="ТО (масло и фильтры)">Записаться на ТО</a>
-      </li>
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h36M10 34l4-14h20l4 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M16 20v-6M32 20v-6M14 14h20" stroke="currentColor" stroke-width="2.5" fill="none"/><path d="M20 40l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Стучит спереди, тянет в сторону на ровной дороге</h3>
-        <p><b>Ходовая и подвеска.</b> Осмотр на подъёмнике за 20 минут: люфты, сайлентблоки, амортизаторы, рулевые тяги.</p>
-        <a class="link-book" href="#zapis" data-book="Ходовая и подвеска">Записаться на осмотр</a>
-      </li>
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M24 8v10M24 30v10M8 24h10M30 24h10" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Пора менять резину или пробили колесо</h3>
-        <p><b>Шиномонтаж.</b> Снимаем, монтируем, балансируем. Комплект R13–R16 — около 40 минут.</p>
-        <a class="link-book" href="#zapis" data-book="Шиномонтаж">Записаться на шиномонтаж</a>
-      </li>
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30l6-10h20l10 6v8H6z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 22c2 3 2 6 0 8" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="14" cy="34" r="3" fill="currentColor"/><circle cx="34" cy="34" r="3" fill="currentColor"/></svg>
-        <h3>Вмятина, царапина, задели на парковке</h3>
-        <p><b>Кузовной ремонт и покраска.</b> Подбираем цвет по коду, красим в отдельном боксе. Небольшие вмятины правим без покраски.</p>
-        <a class="link-book" href="#zapis" data-book="Кузовной ремонт">Записаться на осмотр кузова</a>
-      </li>
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="16" width="28" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 16v-4M32 16v-4M17 26h6M29 23v6M26 26h6" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Не заводится, садится аккумулятор, не горит свет</h3>
-        <p><b>Автоэлектрика.</b> Ищем, куда уходит заряд, проверяем генератор и стартер, чиним проводку.</p>
-        <a class="link-book" href="#zapis" data-book="Автоэлектрика">Записаться к электрику</a>
-      </li>
-      <li class="symptom">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6v36M8 15l32 18M8 33l32-18" stroke="currentColor" stroke-width="2.5"/><path d="M20 8l4 4 4-4M20 40l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Кондиционер дует тёплым</h3>
-        <p><b>Кондиционер.</b> Сначала ищем утечку, потом вакуум и заправка. Если фреон уходит — скажем, откуда.</p>
-        <a class="link-book" href="#zapis" data-book="Кондиционер">Записаться на заправку</a>
-      </li>
-      <li class="symptom symptom--road">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42s14-12 14-24a14 14 0 0 0-28 0c0 12 14 24 14 24z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
-        <h3>Машина не едет и стоит не у нас</h3>
-        <p><b>Выезд мастера.</b> По Твери — 1 000 ₽, приезжаем за 40–60 минут. Заведём, поменяем колесо, посмотрим на месте. Эвакуатор — через партнёра, от 3 000 ₽.</p>
-        <a class="btn btn--call" href="tel:+79000000000">Позвонить мастеру</a>
-      </li>
-    </ul>
+    <div class="lv-head"><div><p class="lv-kicker">Услуги и цены</p><h2 id="uslugi-title">С чем к нам приезжают</h2>
+      <p class="section__lead">Цена работы без запчастей. Не знаете, как называется поломка, — выберите, что чувствуете.</p></div>
+      <a class="btn btn--ghost-dark" href="#ceny">Все цены</a></div>
+    <ul class="tiles" data-lv-group><li><a class="tile" href="#zapis"><img src="images/ph/diagnostika-960.webp" srcset="images/ph/diagnostika-500.webp 500w, images/ph/diagnostika-960.webp 960w, images/ph/diagnostika-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="853" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 1 200 ₽</span><h3>Компьютерная диагностика</h3><p>Горит «чек» или машина ведёт себя странно</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/to-960.webp" srcset="images/ph/to-500.webp 500w, images/ph/to-960.webp 960w, images/ph/to-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="720" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 900 ₽</span><h3>ТО: масло и фильтры</h3><p>Подошёл пробег на замену масла</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/hodovaya-960.webp" srcset="images/ph/hodovaya-500.webp 500w, images/ph/hodovaya-960.webp 960w, images/ph/hodovaya-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="853" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 500 ₽</span><h3>Ходовая и подвеска</h3><p>Стучит спереди, тянет в сторону</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/shinomontazh-960.webp" srcset="images/ph/shinomontazh-500.webp 500w, images/ph/shinomontazh-960.webp 960w, images/ph/shinomontazh-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="853" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 2 400 ₽</span><h3>Шиномонтаж</h3><p>Пора менять резину или пробили колесо</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/kuzov-960.webp" srcset="images/ph/kuzov-500.webp 500w, images/ph/kuzov-960.webp 960w, images/ph/kuzov-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="848" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 7 000 ₽</span><h3>Кузовной ремонт и покраска</h3><p>Вмятина, царапина, задели на парковке</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/elektrika-960.webp" srcset="images/ph/elektrika-500.webp 500w, images/ph/elektrika-960.webp 960w, images/ph/elektrika-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="853" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 1 500 ₽</span><h3>Автоэлектрика</h3><p>Не заводится, садится аккумулятор</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/kondicioner-960.webp" srcset="images/ph/kondicioner-500.webp 500w, images/ph/kondicioner-960.webp 960w, images/ph/kondicioner-1280.webp 1280w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="960" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">от 2 500 ₽</span><h3>Кондиционер</h3><p>Кондиционер дует тёплым</p><span class="tile__more">Записаться</span></div></a></li><li><a class="tile" href="#zapis"><img src="images/ph/vyezd-960.webp" srcset="images/ph/vyezd-500.webp 500w, images/ph/vyezd-960.webp 960w, images/ph/vyezd-1280.webp 1280w, images/ph/vyezd-1920.webp 1920w" sizes="(max-width: 559px) 100vw, (max-width: 999px) 50vw, 25vw" width="1280" height="853" alt="" loading="lazy" decoding="async"><div class="tile__body"><span class="tile__price">1 000 ₽</span><h3>Выезд мастера</h3><p>Машина не едет и стоит не у нас</p><span class="tile__more">Записаться</span></div></a></li></ul>
+  </div>
+</section>
+<section class="lv-band" aria-label="Марки, которые чаще всего чиним">
+  <div class="wrap">
+    <p class="lv-band__label">Чаще всего чиним</p>
+    <div class="lv-band__row">
+      <div class="marquee" data-marquee><ul class="marquee__track"><li>Kia</li><li>Hyundai</li><li>Toyota</li><li>Renault</li><li>Lada</li><li>Volkswagen</li><li>Skoda</li><li>Nissan</li><li>Chery</li><li>Haval</li><li>Газель</li><li>Ford Транзит</li></ul></div>
+      <button class="marquee__pause" type="button" aria-pressed="false" aria-label="Остановить бегущую строку">&#10073;&#10073;</button>
+    </div>
   </div>
 </section>
 
@@ -210,9 +172,9 @@
       </div>
     </div>
     <div class="about__photos">
-      <figure class="ph ph--img ph--tall"><img src="images/ph/workshop-960.webp" srcset="images/ph/workshop-500.webp 500w, images/ph/workshop-960.webp 960w, images/ph/workshop-1280.webp 1280w, images/ph/workshop-1920.webp 1920w" sizes="(max-width: 899px) 100vw, 45vw" width="1280" height="854" alt="Цех вечером: машина с открытым капотом, свет ламп" loading="lazy" decoding="async"></figure>
-      <figure class="ph ph--img"><img src="images/ph/hands-960.webp" srcset="images/ph/hands-500.webp 500w, images/ph/hands-960.webp 960w, images/ph/hands-1280.webp 1280w" sizes="(max-width: 899px) 50vw, 22vw" width="1280" height="854" alt="Руки мастера с отвёрткой у замка двери" loading="lazy" decoding="async"></figure>
-      <figure class="ph ph--img"><img src="images/ph/box-960.webp" srcset="images/ph/box-500.webp 500w, images/ph/box-960.webp 960w, images/ph/box-1280.webp 1280w, images/ph/box-1920.webp 1920w" sizes="(max-width: 899px) 50vw, 22vw" width="1280" height="853" alt="Машины подняты на подъёмниках в боксе" loading="lazy" decoding="async"></figure>
+      <figure class="ph ph--img ph--tall"><img src="images/ph/box-960.webp" srcset="images/ph/box-500.webp 500w, images/ph/box-960.webp 960w, images/ph/box-1280.webp 1280w, images/ph/box-1920.webp 1920w" sizes="(max-width: 899px) 100vw, 45vw" width="1280" height="853" alt="Большой светлый бокс, машина на подъёмнике" loading="lazy" decoding="async"></figure>
+      <figure class="ph ph--img"><img src="images/ph/hands-960.webp" srcset="images/ph/hands-500.webp 500w, images/ph/hands-960.webp 960w, images/ph/hands-1280.webp 1280w" sizes="(max-width: 899px) 50vw, 22vw" width="1280" height="720" alt="Руки мастера в перчатках на двигателе" loading="lazy" decoding="async"></figure>
+      <figure class="ph ph--img"><img src="images/ph/tools-960.webp" srcset="images/ph/tools-500.webp 500w, images/ph/tools-960.webp 960w, images/ph/tools-1280.webp 1280w" sizes="(max-width: 899px) 50vw, 22vw" width="1280" height="853" alt="Стена с гаечными ключами в мастерской" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -221,14 +183,7 @@
 <section class="section" id="otzyvy" aria-labelledby="otzyvy-title">
   <div class="wrap">
     <h2 id="otzyvy-title">Что говорят клиенты</h2>
-    <p class="demo-note">Пример отзывов. На вашем сайте будут настоящие отзывы ваших клиентов.</p>
-    <div class="reviews">
-      <blockquote class="review"><p>Пришёл с горящим чеком, через 40 минут показали распечатку: датчик кислорода. Заменили в тот же день, старый датчик отдали.</p><footer>Андрей, Kia Rio
-  <div class="wrap"><p class="credits">Фото-примеры: <a href="https://commons.wikimedia.org/wiki/File:Chery_A1_-_service_shop_in_Ukraine_(7).jpg" rel="nofollow noopener" target="_blank">ANT Berezhnyi</a> (<a href="https://creativecommons.org/licenses/by/3.0" rel="license nofollow noopener" target="_blank">CC BY 3.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Car_repair_shop.jpg" rel="nofollow noopener" target="_blank">Martin Vorel</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license nofollow noopener" target="_blank">CC BY-SA 4.0</a>), <a href="https://commons.wikimedia.org/wiki/File:Hands_repairing_a_car_door_latch_using_a_screwdriver_in_a_workshop_setting.jpg" rel="nofollow noopener" target="_blank">Shixart1985</a> (<a href="https://creativecommons.org/licenses/by/2.0" rel="license nofollow noopener" target="_blank">CC BY 2.0</a>), <a href="https://commons.wikimedia.org/wiki/File:USMC-100702-M-6457M-002.jpg" rel="nofollow noopener" target="_blank">Unknown author</a> (<a href="https://creativecommons.org/publicdomain/mark/1.0/" rel="license nofollow noopener" target="_blank">Public domain</a>) — Wikimedia Commons.</p></div>
-</footer></blockquote>
-      <blockquote class="review"><p>Записалась на ТО через сайт вечером, утром перезвонили. Без навязывания лишнего, всё по смете.</p><footer>Ольга, Hyundai Creta</footer></blockquote>
-      <blockquote class="review"><p>Встал на трассе под Медным. Мастер приехал через час, дотянули до сервиса своим ходом.</p><footer>Сергей, Газель Next</footer></blockquote>
-    </div>
+    <p class="demo-note">Пример отзывов. На вашем сайте будут настоящие отзывы ваших клиентов.</p><div class="reviews--cards" data-lv-group><figure class="rcard"><div class="rcard__who"><span class="rcard__ava" aria-hidden="true">А</span><div><div class="rcard__name">Андрей</div><div class="rcard__car">Kia Rio</div></div></div><div class="rcard__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Пришёл с горящим чеком, через 40 минут показали распечатку: датчик кислорода. Заменили в тот же день, старый датчик отдали.</p><div class="rcard__src">Яндекс Карты · пример отзыва</div></figure><figure class="rcard"><div class="rcard__who"><span class="rcard__ava" aria-hidden="true">О</span><div><div class="rcard__name">Ольга</div><div class="rcard__car">Hyundai Creta</div></div></div><div class="rcard__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Записалась на ТО через сайт вечером, утром перезвонили. Без навязывания лишнего, всё по смете.</p><div class="rcard__src">Яндекс Карты · пример отзыва</div></figure><figure class="rcard"><div class="rcard__who"><span class="rcard__ava" aria-hidden="true">С</span><div><div class="rcard__name">Сергей</div><div class="rcard__car">Газель Next</div></div></div><div class="rcard__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Встал на трассе под Медным. Мастер приехал через час, дотянули до сервиса своим ходом.</p><div class="rcard__src">Яндекс Карты · пример отзыва</div></figure></div>
   </div>
 </section>
 
@@ -315,8 +270,10 @@
     <p class="foot__req">Реквизиты ИП — на вашем сайте будут ваши</p>
     <p><a href="#top">Наверх</a></p>
   </div>
+  <div class="wrap"><p class="credits">Фото-примеры: <a href="https://www.pexels.com/" rel="nofollow noopener" target="_blank">Pexels</a> (<a href="https://www.pexels.com/license/" rel="license nofollow noopener" target="_blank">лицензия Pexels</a>). У клиента — его собственные фото.</p></div>
 </footer>
 
 <script src="js/main.js" defer></script>
+<script src="js/live.js" defer></script>
 </body>
 </html>
