@@ -184,3 +184,13 @@
   .offer { min-height: 0; }
   .offer__img { min-height: 150px; }
 }
+
+/* ---------- Мастера с фото ---------- */
+.team-ph { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+@media (min-width: 768px) { .team-ph { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+.team-ph figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; isolation: isolate; aspect-ratio: 3 / 4; background: var(--brand-deep); }
+.team-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.team-ph figure::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 50%, color-mix(in srgb, var(--brand-deep) 92%, transparent) 100%); }
+.team-ph figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: .9rem 1rem; color: #fff; font: 800 1.35rem/1.05 var(--font-head); }
+.team-ph figcaption::before { content: ""; display: block; width: 26px; height: 4px; border-radius: 2px; background: var(--accent); margin-bottom: .5rem; }
+.team-ph figure:hover img { transform: scale(1.05); }
